@@ -31,11 +31,13 @@ mosh user@host
 
 Ubuntu Precise (12.04) provides 1.1 version of Mosh, but the newer version is available from backports repository. To install:
 
-1. Enable backports repository; you can use [debian-backports role](https://galaxy.ansibleworks.com/list#/roles/224)
+1. Enable backports repository; you can use [debian-backports role](https://galaxy.ansibleworks.com/list#/roles/224):
+
   ```
   ansible-galaxy install jnv.debian-backports
   ```
-2. Set `mosh_debian_use_backports` variable to true.
+
+2. Enable `mosh_debian_use_backports` variable.
 
 For example:
 
@@ -49,6 +51,6 @@ For example:
 ## Variables
 
 - `mosh_pkg` (default: `mosh`): Mosh package name, usually just on most distributions
-- `mosh_debian_use_backports` (default: `no`): Whether the backports version should be installed; see above.
+- `mosh_debian_use_backports` (default: `no`): Whether the backports version should be installed; see [above](#install-mosh-12-from-backports-debian-ubuntu).
 - `mosh_debian_backports_target` (default: `{{ansible_distribution_release}}-backports`): Value of the `default_release` to use with [apt module](http://docs.ansible.com/apt_module.html) when `mosh_debian_use_backports` is enabled.
-    + The default resolves to, for example `precise-backports`
+    + The default resolves to, for example, `precise-backports`
