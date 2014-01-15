@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Jan Vlnas
-  description: Installs Mosh
+  description: Installs native package for Mosh (mobile shell)
   license: Unlicense
   min_ansible_version: 1.2
   platforms:
