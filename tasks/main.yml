@@ -1,0 +1,12 @@
+---
+- name: install Mosh package for Debian-based system
+  apt: name={{mosh_pkg}} state=present
+  when: ansible_os_family == 'Debian'
+
+- name: install Mosh package for openSuSE
+  zypper: name={{mosh_pkg}} state=present
+  when: ansible_distribution == 'opensuse'
+
+- name: install Mosh package for Fedora
+  yum: name={{mosh_pkg}} state=present
+  when: ansible_distribution == 'Fedora'
